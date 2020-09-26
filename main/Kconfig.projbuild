@@ -1,0 +1,23 @@
+menu "Ports Configuration"
+
+    config INPUT_PORT
+        int "Output port"
+        range 0 34
+        default 5
+        help
+            GPIO port for connecting device.
+
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.
+            
+            GPIOs 35-39 are input-only so cannot be used as outputs.
+    
+    config TIME_STAMP
+        int "Log timestamp configuration"
+        range 0 1
+        default 0
+        help 
+            0 -> HH:MM:SS.sss
+            
+            1 -> milisenconds.
+
+endmenu
